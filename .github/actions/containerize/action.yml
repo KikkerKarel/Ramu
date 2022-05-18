@@ -1,0 +1,34 @@
+name: "containerize"
+description: "A custom composite action to deploy a service to dockerhub"
+inputs:
+  PATH_TO_DOCKERFILE:
+    required: true
+    decription: "Path to the docker file"
+  DOCKER_IMAGE_NAME:
+    required: true
+    decription: "Name of the docker image"
+  DOCKER_REPO_NAME:
+    required: true
+    decription: "Name of the docker repo"
+  DOCKER_ACCTOKEN:
+    required: true
+    decription: "Dockerhub accesstoken"
+  DOCKER_USERNAME:
+    required: true
+    decription: "Dockerhub Username"
+runs:
+  using: "composite"
+  steps:
+    - run : docker build ${{inputs.PATH_TO_DOCKERFILE}} --tag ${{inputs.DOCKER_IMAGE_NAME}}
+      shell: bash  
+
+    - uses: docker/login-action@v1
+      with:
+        username: ${{ inputs.DOCKER_USERNAME }}
+        password: ${{ inputs.DOCKER_ACCTOKEN }} 
+
+    - run : docker tag ${{inputs.DOCKER_IMAGE_NAME}} ${{inputs.DOCKER_REPO_NAME}}
+      shell: bash
+
+    - run : docker push ${{inputs.DOCKER_REPO_NAME}}
+      shell: bash

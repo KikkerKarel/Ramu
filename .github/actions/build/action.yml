@@ -1,0 +1,13 @@
+name: "build"
+description: "A custom composite action to build a solution or microservice"
+inputs:
+  PATH_TO_SLN_OR_CSPROJ:
+    required: true
+    decription: "Path to the sln or csproj file of the solution or microservice"
+runs:
+  using: "composite"
+  steps:
+    - run : dotnet build -restore ${{inputs.PATH_TO_SLN_OR_CSPROJ}}
+      shell: bash  
+    - run : dotnet build --no-restore ${{inputs.PATH_TO_SLN_OR_CSPROJ}}
+      shell: bash
