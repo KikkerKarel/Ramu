@@ -5,7 +5,7 @@ on:
 
 jobs:
   build: 
-    runs-on: self-hosted
+    runs-on: windows-latest
     strategy:
       matrix: 
         PATH_TO_SLN_OR_CSPROJ:
@@ -26,7 +26,7 @@ jobs:
           PATH_TO_SLN_OR_CSPROJ: ${{matrix.PATH_TO_SLN_OR_CSPROJ}}
 
   containerize:
-    runs-on: self-hosted
+    runs-on: windows-latest
     needs:
       - build
     strategy:
