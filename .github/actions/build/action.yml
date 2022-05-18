@@ -8,6 +8,6 @@ runs:
   using: "composite"
   steps:
     - run : dotnet build -restore ${{inputs.PATH_TO_SLN_OR_CSPROJ}}
-      shell: powershell  
+      shell: bash  
     - run : dotnet build --no-restore ${{inputs.PATH_TO_SLN_OR_CSPROJ}}
-      shell: powershell
+      shell: bash
