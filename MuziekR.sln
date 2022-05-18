@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator.Microservice", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "User.Microservice", "User.Microservice\User.Microservice.csproj", "{C8AEF60D-6D7B-44DB-8589-CCEA5555130F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Microservice", "API.Microservice\API.Microservice.csproj", "{A54AB57A-8F61-46C6-8ADC-86765F05975B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Microservice", "API.Microservice\API.Microservice.csproj", "{A54AB57A-8F61-46C6-8ADC-86765F05975B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
