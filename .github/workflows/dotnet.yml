@@ -12,7 +12,7 @@ jobs:
 #           - "/User.Microservice/User.Microservice.csproj"
 #           - "./List.Microservice/List.Microservice.csproj"
 #           - "./Calculator.Microservice/Calculator.Microservice.csproj"
-          - "F:/Users/Nahir Duzason/Documents/Ramu/Ramu-Backend/Ramu/API.Microservice"
+          - "./Ramu/Ramu-Backend/Ramu/API.Microservice"
 #           - "./Gateway.API/Gateway.API.csproj"
           - "MuziekR.sln"
 
