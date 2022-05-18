@@ -3,14 +3,13 @@
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
-EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["User.Microservice/User.Microservice.csproj", "User.Microservice/"]
+COPY ["User.Microservice.csproj", "User.Microservice/"]
 RUN dotnet restore "User.Microservice/User.Microservice.csproj"
-COPY . .
 WORKDIR "/src/User.Microservice"
+COPY . .
 RUN dotnet build "User.Microservice.csproj" -c Release -o /app/build
 
 FROM build AS publish
