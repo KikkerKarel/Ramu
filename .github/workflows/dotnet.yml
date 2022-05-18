@@ -9,10 +9,10 @@ jobs:
     strategy:
       matrix: 
         PATH_TO_SLN_OR_CSPROJ:
-          - "/User.Microservice/User.Microservice.csproj"
+#           - "/User.Microservice/User.Microservice.csproj"
 #           - "./List.Microservice/List.Microservice.csproj"
 #           - "./Calculator.Microservice/Calculator.Microservice.csproj"
-#           - "./API.Microservice/API.Microserivce.csproj"
+          - "F:/Users/Nahir Duzason/Documents/Ramu/Ramu-Backend/Ramu/API.Microservice"
 #           - "./Gateway.API/Gateway.API.csproj"
           - "MuziekR.sln"
 
