@@ -25,27 +25,10 @@ jobs:
         with:
           PATH_TO_SLN_OR_CSPROJ: ${{matrix.PATH_TO_SLN_OR_CSPROJ}}
 
-#   test: 
-#     runs-on: self-hosted
-#     strategy:
-#       matrix: 
-#         PATH_TO_TEST_CSPROJ:
-#           - "./Back-end/UserMicroservice.Test/UserMicroservice.Test.csproj"
-
-#     steps:
-#       - name: Clone repo to runner
-#         uses: actions/checkout@v3
-
-#       - name: test 
-#         uses: ./.github/actions/back-end/test
-#         with:
-#           PATH_TO_TEST_CSPROJ: ${{matrix.PATH_TO_TEST_CSPROJ}}
-
   containerize:
     runs-on: self-hosted
     needs:
       - build
-      - test
     strategy:
       matrix: 
         array: [
