@@ -1,6 +1,0 @@
-﻿namespace Gateway.API
-{
-    public class idk
-    {
-    }
-}
