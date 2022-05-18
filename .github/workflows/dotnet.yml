@@ -1,0 +1,90 @@
+name: back-end_development
+on:
+  push:
+    branches: [development]
+
+jobs:
+  build: 
+    runs-on: self-hosted
+    strategy:
+      matrix: 
+        PATH_TO_SLN_OR_CSPROJ:
+          - "./User.Microservice/User.Microservice.csproj"
+          - "./List.Microservice/List.Microservice.csproj"
+          - "./Calculator.Microservice/Calculator.Microservice.csproj"
+          - "./API.Microservice/API.Microserivce.csproj"
+          - "./Gateway.API/Gateway.API.csproj"
+          - "MuziekR.sln"
+
+    steps:
+      - name: Clone repo to runner
+        uses: actions/checkout@v3
+
+      - name: build 
+        uses: ./.github/actions/back-end/build
+        with:
+          PATH_TO_SLN_OR_CSPROJ: ${{matrix.PATH_TO_SLN_OR_CSPROJ}}
+
+#   test: 
+#     runs-on: self-hosted
+#     strategy:
+#       matrix: 
+#         PATH_TO_TEST_CSPROJ:
+#           - "./Back-end/UserMicroservice.Test/UserMicroservice.Test.csproj"
+
+#     steps:
+#       - name: Clone repo to runner
+#         uses: actions/checkout@v3
+
+#       - name: test 
+#         uses: ./.github/actions/back-end/test
+#         with:
+#           PATH_TO_TEST_CSPROJ: ${{matrix.PATH_TO_TEST_CSPROJ}}
+
+  containerize:
+    runs-on: self-hosted
+    needs:
+      - build
+      - test
+    strategy:
+      matrix: 
+        array: [
+          {
+            PATH_TO_DOCKERFILE: "./User.Microservice/",
+            DOCKER_IMAGE_NAME: "usermicroservice",
+            DOCKER_REPO_NAME: "kikkerkarel/usermicroservice"
+          },
+          {
+            PATH_TO_DOCKERFILE: "./Gateway.API/",
+            DOCKER_IMAGE_NAME: "gateway",
+            DOCKER_REPO_NAME: "kikkerkarel/gatewayapi"
+          },
+          {
+            PATH_TO_DOCKERFILE: "./List.Microservice/",
+            DOCKER_IMAGE_NAME: "listmicroservice",
+            DOCKER_REPO_NAME: "kikkerkarel/listmicroserivce"
+          },
+          {
+            PATH_TO_DOCKERFILE: "./Calculator.Microservice/",
+            DOCKER_IMAGE_NAME: "calculatormicroservice",
+            DOCKER_REPO_NAME: "kikkerkarel/calculatormicroservice"
+          },
+          {
+            PATH_TO_DOCKERFILE: "./API.Microservice/",
+            DOCKER_IMAGE_NAME: "apimicroservice",
+            DOCKER_REPO_NAME: "kikkerkarel/apimicroservice"
+          },
+      ]
+
+    steps:
+    - name: Clone repo to runner
+      uses: actions/checkout@v3
+
+    - name: containerize 
+      uses: ./.github/actions/back-end/containerize
+      with:
+        PATH_TO_DOCKERFILE: ${{matrix.array.PATH_TO_DOCKERFILE}}
+        DOCKER_IMAGE_NAME: ${{matrix.array.DOCKER_IMAGE_NAME}}
+        DOCKER_REPO_NAME: ${{matrix.array.DOCKER_REPO_NAME}}
+        DOCKER_ACCTOKEN: ${{secrets.DOCKER_ACCTOKEN}}
+        DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
