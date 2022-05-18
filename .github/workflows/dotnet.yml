@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix: 
         PATH_TO_SLN_OR_CSPROJ:
-          - "./Ramu/User.Microservice/User.Microservice.csproj"
+#           - "./Ramu/User.Microservice/User.Microservice.csproj"
 #           - "./List.Microservice/List.Microservice.csproj"
 #           - "./Calculator.Microservice/Calculator.Microservice.csproj"
 #           - "./API.Microservice/API.Microserivce.csproj"
