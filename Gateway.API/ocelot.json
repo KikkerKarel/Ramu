@@ -1,0 +1,305 @@
+{
+  "Routes": [
+    //User.Microservice calls
+    {
+      "DownstreamPathTemplate": "/user/login",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44330
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/user/login",
+      "UpstreamHttpMethod": [ "POST" ],
+      "SwaggerKey": "User.Microservice"
+    },
+    {
+      "DownstreamPathTemplate": "/users",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44330
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/users",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "SwaggerKey": "User.Microservice"
+    },
+    {
+      "DownstreamPathTemplate": "/user/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44330
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/user/{id}",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "SwaggerKey": "User.Microservice"
+    },
+    {
+      "DownstreamPathTemplate": "/user/register",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44330
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/user/register",
+      "UpstreamHttpMethod": [ "POST" ],
+      "SwaggerKey": "User.Microservice"
+    },
+    //List.Microservice calls
+    {
+      "DownstreamPathTemplate": "/list/get",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44341
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/list/get",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ],
+      "SwaggerKey": "List.Microservice"
+    },
+    {
+      "DownstreamPathTemplate": "/list/add",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44341
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/list/add",
+      "UpstreamHttpMethod": [ "POST", "PUT" ],
+      "SwaggerKey": "List.Microservice"
+    },
+    {
+      "DownstreamPathTemplate": "/list/entry/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44341
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/list/entry/{id}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ],
+      "SwaggerKey": "List.Microservice"
+    },
+    {
+      "DownstreamPathTemplate": "/list/delete/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44341
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/list/delete/{id}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ],
+      "SwaggerKey": "List.Microservice"
+    },
+    //Calculator.Microservice calls
+    {
+      "DownstreamPathTemplate": "/ramu/calculator",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44371
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/calculator",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ],
+      "SwaggerKey": "Calculator.Microservice"
+    },
+    //API.Microservice calls
+    {
+      "DownstreamPathTemplate": "/spotify/api/login",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44391
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/spotify/login",
+      "UpstreamHttpMethod": [ "POST" ],
+      "SwaggerKey": "API.Microservice"
+    },
+    {
+      "DownstreamPathTemplate": "/spotify/api/callback",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44391
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/spotify/callback",
+      "UpstreamHttpMethod": [ "POST" ],
+      "SwaggerKey": "API.Microservice"
+    },
+
+    //API.Microservice Artist calls
+    {
+      "DownstreamPathTemplate": "/spotify/api/search/artist",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44391
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/spotify/api/search/artist",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "API.Microservice"
+    },
+    {
+      "DownstreamPathTemplate": "/api/db/artist/get/all",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44391
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/api/db/artist/get/all",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "API.Microservice"
+    },
+    {
+      "DownstreamPathTemplate": "/spotify/db/artist/get/{name}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44391
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/spotify/db/artist/{name}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "API.Microservice"
+    },
+    {
+      "DownstreamPathTemplate": "/spotify/db/artist/get/id/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44391
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/spotify/db/artist/id/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "API.Microservice"
+    },
+    //API.Microservice Song calls
+    {
+      "DownstreamPathTemplate": "/spotify/api/search/song",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44391
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/spotify/api/search/song",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "API.Microservice"
+    },
+    {
+      "DownstreamPathTemplate": "/api/db/song/get/{name}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44391
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/api/song/get/{name}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "API.Microservice"
+    },
+    {
+      "DownstreamPathTemplate": "/api/db/song/get/all",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44391
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/api/db/song/get/all",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "API.Microservice"
+    },
+    {
+      "DownstreamPathTemplate": "/api/db/song/get/id/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44391
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/api/db/song/get/id/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "API.Microservice"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "User.Microservice",
+      "Config": [
+        {
+          "Name": "User API",
+          "Version": "v1",
+          "Url": "https://localhost:44330/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "List.Microservice",
+      "Config": [
+        {
+          "Name": "List API",
+          "Version": "v1",
+          "Url": "https://localhost:44341/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Calculator.Microservice",
+      "Config": [
+        {
+          "Name": "Calculator API",
+          "Version": "v1",
+          "Url": "https://localhost:44371/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "API.Microservice",
+      "Config": [
+        {
+          "Name": "Spotify&YouTube API",
+          "Version": "v1",
+          "Url": "https://localhost:44391/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    //"RequestIdKey": "OcRequestId",
+    //"AdministrationPath": "/administration",
+    //"BaseUrl": "https://localhost:7102"
+  }
+}
