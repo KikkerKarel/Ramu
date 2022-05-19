@@ -13,7 +13,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("AppDb");
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+var authenticationProviderKey = "UserKey";
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(authenticationProviderKey, options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters()
     {
@@ -136,7 +138,9 @@ IResult Login(UserLogin user, IUserDAL db)
         {
             new Claim(ClaimTypes.NameIdentifier, loggedInUser.Username),
             new Claim(ClaimTypes.Email, loggedInUser.Email),
-            new Claim(ClaimTypes.DateOfBirth, loggedInUser.DateofBirth.ToString())
+            new Claim(ClaimTypes.DateOfBirth, loggedInUser.DateofBirth.ToString()),
+            new Claim("User", "LoggedIn"),
+            new Claim("UserId", loggedInUser.Id.ToString())
         };
 
         var token = new JwtSecurityToken

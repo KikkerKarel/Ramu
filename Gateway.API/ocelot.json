@@ -23,6 +23,13 @@
           "Port": 44330
         }
       ],
+      "AuthenticationOptions": {
+        "AuthenticationProvderKey": "UserKey",
+        "AllowedScopes": []
+      },
+      //"RouteClaimsRequirement": {
+      //  "http///schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier": "test"
+      //},
       "UpstreamPathTemplate": "/ramu/users",
       "UpstreamHttpMethod": [ "POST", "GET" ],
       "SwaggerKey": "User.Microservice"
@@ -55,7 +62,7 @@
     },
     //List.Microservice calls
     {
-      "DownstreamPathTemplate": "/list/get",
+      "DownstreamPathTemplate": "/list/get/{userId}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -63,7 +70,7 @@
           "Port": 44341
         }
       ],
-      "UpstreamPathTemplate": "/ramu/list/get",
+      "UpstreamPathTemplate": "/ramu/list/get/{userId}",
       "UpstreamHttpMethod": [ "POST", "PUT", "GET" ],
       "SwaggerKey": "List.Microservice"
     },
@@ -77,6 +84,19 @@
         }
       ],
       "UpstreamPathTemplate": "/ramu/list/add",
+      "UpstreamHttpMethod": [ "POST", "PUT" ],
+      "SwaggerKey": "List.Microservice"
+    },
+    {
+      "DownstreamPathTemplate": "/list/update/rating",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44341
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/list/update/rating",
       "UpstreamHttpMethod": [ "POST", "PUT" ],
       "SwaggerKey": "List.Microservice"
     },

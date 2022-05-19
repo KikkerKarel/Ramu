@@ -50,9 +50,14 @@ app.MapPost("/list/add", ([FromServices] IListDAL db, ListModel list) =>
     db.AddToList(list);
 });
 
-app.MapGet("/list/get", ([FromServices] IListDAL db) =>
+app.MapPut("/list/update/rating", ([FromServices] IListDAL db, int id, int rating) =>
 {
-    return db.GetList();
+    db.UpdateRating(id, rating);
+});
+
+app.MapGet("/list/get/{userId}", ([FromServices] IListDAL db, int userId) =>
+{
+    return db.GetList(userId);
 });
 
 app.MapGet("/list/entry/{id}", ([FromServices] IListDAL db, int id) =>

@@ -6,7 +6,8 @@ namespace List.Microservice.Repository
     public interface IListDAL
     {
         ActionResult AddToList(ListModel list);
-        List<ListModel> GetList();
+        List<ListModel> GetList(int userId);
+        ActionResult UpdateRating(int id, int rating);
         ListModel GetEntryById(int id);
         public ActionResult DeleteEntryById(int id);
 

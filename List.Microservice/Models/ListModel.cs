@@ -7,8 +7,11 @@ namespace List.Microservice.Models
     {
         [Key]
         public int Id { get; set; }
+        public int? UserId { get; set; }
         public string SongName { get; set; }
+        public string? SongImage { get; set; }
         public string Artist { get; set; }
+        public string? ArtistImage { get; set; }
         public int Rating { get; set; }
     }
 }

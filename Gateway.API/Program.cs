@@ -1,3 +1,4 @@
+using Gateway.API;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 
@@ -20,6 +21,7 @@ builder.Host.UseContentRoot(Directory.GetCurrentDirectory())
     .ConfigureServices(s =>
     {
         s.AddOcelot();
+        s.DecorateClaimAuthoriser();
         s.AddControllers();
         s.AddSwaggerForOcelot(configuration);
     });
@@ -30,6 +32,7 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins("http://localhost:3000");
         policy.AllowAnyHeader();
+        policy.AllowAnyMethod();
     });
 });
 

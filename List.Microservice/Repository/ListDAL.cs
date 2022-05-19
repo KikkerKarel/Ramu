@@ -12,7 +12,10 @@ namespace List.Microservice.Repository
             this.db = db;
         }
 
-        public List<ListModel> GetList() => db.List.ToList();
+        public List<ListModel> GetList(int userId)
+        {
+            return db.List.Where(x => x.UserId == userId).ToList();
+        }
 
         public ListModel GetEntryById(int id)
         {
@@ -22,6 +25,15 @@ namespace List.Microservice.Repository
         public ActionResult AddToList(ListModel list)
         {
             db.List.Add(list);
+            db.SaveChanges();
+            return new OkResult();
+        }
+
+        public ActionResult UpdateRating(int id, int rating)
+        {
+            var list = new ListModel() { Id = id, Rating = rating };
+            db.List.Attach(list);
+            db.Entry(list).Property(x => x.Rating).IsModified = true;
             db.SaveChanges();
             return new OkResult();
         }
