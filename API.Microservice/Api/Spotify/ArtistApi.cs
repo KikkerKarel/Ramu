@@ -35,6 +35,7 @@ namespace API.Microservice.Api.Spotify
                 newArtist.Id = item.Id;
                 newArtist.Followers = item.Followers.Total;
                 newArtist.Popularity = item.Popularity;
+                newArtist.SpotifyUrl = item.ExternalUrls.First().Value;
                 item.Images.ForEach(image =>
                 {
                     if (image.Height == 640 && image.Width == 640)

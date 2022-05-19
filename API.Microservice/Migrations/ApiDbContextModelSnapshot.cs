@@ -43,6 +43,9 @@ namespace API.Microservice.Migrations
                     b.Property<int>("Popularity")
                         .HasColumnType("int");
 
+                    b.Property<string>("SpotifyUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Artist");

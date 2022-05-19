@@ -221,6 +221,19 @@
       "UpstreamHttpMethod": [ "GET" ],
       "SwaggerKey": "API.Microservice"
     },
+    {
+      "DownstreamPathTemplate": "/api/scrape/get/about",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44391
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/api/scrape/get/about",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "API.Microservice"
+    },
     //API.Microservice Song calls
     {
       "DownstreamPathTemplate": "/spotify/api/search/song",
@@ -273,6 +286,19 @@
       "UpstreamPathTemplate": "/ramu/api/db/song/get/id/{id}",
       "UpstreamHttpMethod": [ "GET" ],
       "SwaggerKey": "API.Microservice"
+    },
+    //Webscraper
+    {
+      "DownstreamPathTemplate": "/webscraper/scrape/about",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/webscraper/scrape/about",
+      "UpstreamHttpMethod": [ "Post", "GET" ]
     }
   ],
   "SwaggerEndPoints": [

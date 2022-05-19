@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Microservice.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    [Migration("20220518085505_ApiDb")]
+    [Migration("20220519191426_ApiDb")]
     partial class ApiDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,6 +44,9 @@ namespace API.Microservice.Migrations
 
                     b.Property<int>("Popularity")
                         .HasColumnType("int");
+
+                    b.Property<string>("SpotifyUrl")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

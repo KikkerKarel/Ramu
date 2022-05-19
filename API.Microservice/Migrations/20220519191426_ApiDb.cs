@@ -17,7 +17,8 @@ namespace API.Microservice.Migrations
                     Followers = table.Column<int>(type: "int", nullable: false),
                     Popularity = table.Column<int>(type: "int", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Banner = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Banner = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SpotifyUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

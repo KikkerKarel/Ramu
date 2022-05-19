@@ -107,6 +107,12 @@ app.MapGet("/api/db/song/get/id/{id}", ([FromServices] ISongDAL db, string id) =
     return db.getSongById(id);
 });
 
+//Webscraper calls
+app.MapGet("/api/scrape/get/about", ([FromServices] IArtistDAL api, string artistId) =>
+{
+    return api.GetAboutFromScraper(artistId);
+});
+
 app.Run();
 
 public partial class Program { }

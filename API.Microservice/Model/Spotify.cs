@@ -16,6 +16,7 @@ namespace API.Microservice.Model
         public int Popularity { get; set; }
         public string Image { get; set; }
         public string? Banner { get; set; }
+        public string? SpotifyUrl { get; set; }
         public List<Song> Songs { get; set; }
     }
 
