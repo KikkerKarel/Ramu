@@ -17,7 +17,7 @@ namespace API.Microservice.Api.Spotify
             byte[] data = Convert.FromBase64String(tokenHash);
             decoded = System.Text.Encoding.ASCII.GetString(data);
             var spotify = new SpotifyClient(decoded);
-   
+
             var query = "artist:" + name;
             var request = new SearchRequest(SearchRequest.Types.Artist, query)
             {
@@ -50,7 +50,8 @@ namespace API.Microservice.Api.Spotify
                 db.Artist.Update(newArtist);
                 db.SaveChanges();
                 return db.Artist.Where(x => x.Name == newArtist.Name).FirstOrDefault();
-            } else
+            }
+            else
             {
                 db.Artist.Add(newArtist);
                 db.SaveChanges();

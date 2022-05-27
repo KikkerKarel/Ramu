@@ -6,7 +6,6 @@ using API.Microservice.Util;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SpotifyAPI.Web.Auth;
-using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -63,7 +62,8 @@ app.MapPost("spotify/api/callback", ([FromServices] IAuthenticator auth, Authori
 });
 
 //Artist calls
-app.MapGet("/spotify/api/search/artist", ([FromServices] IArtistApi api, string name, string tokenHash) => {
+app.MapGet("/spotify/api/search/artist", ([FromServices] IArtistApi api, string name, string tokenHash) =>
+{
     return api.SearchArtist(name, tokenHash);
 });
 
@@ -83,7 +83,8 @@ app.MapGet("/api/db/artist/get/all", ([FromServices] IArtistDAL db) =>
 });
 
 //Song calls
-app.MapGet("/spotify/api/search/song", ([FromServices] ISongApi api, string artistName, string tokenHash) => {
+app.MapGet("/spotify/api/search/song", ([FromServices] ISongApi api, string artistName, string tokenHash) =>
+{
     return api.GetSongsByArtistFromApi(artistName, tokenHash);
 });
 

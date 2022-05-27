@@ -1,8 +1,8 @@
 ﻿
+using Ocelot.Authorization;
 using Ocelot.DownstreamRouteFinder.UrlMatcher;
 using Ocelot.Responses;
 using System.Security.Claims;
-using Ocelot.Authorization;
 
 namespace Gateway.API
 {

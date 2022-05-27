@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "User.Microservice", "User.M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Microservice", "API.Microservice\API.Microservice.csproj", "{A54AB57A-8F61-46C6-8ADC-86765F05975B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTube.Microservice", "YouTube.Microservice\YouTube.Microservice.csproj", "{B8A89B50-2AEF-4E58-ACE2-942DB042B57F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YouTube.Microservice", "YouTube.Microservice\YouTube.Microservice.csproj", "{B8A89B50-2AEF-4E58-ACE2-942DB042B57F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.Microservice.Test", "User.Microservice.Test\User.Microservice.Test.csproj", "{D2D1EE31-2DF8-4932-AA50-D33F317A96F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{B8A89B50-2AEF-4E58-ACE2-942DB042B57F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8A89B50-2AEF-4E58-ACE2-942DB042B57F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8A89B50-2AEF-4E58-ACE2-942DB042B57F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2D1EE31-2DF8-4932-AA50-D33F317A96F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2D1EE31-2DF8-4932-AA50-D33F317A96F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2D1EE31-2DF8-4932-AA50-D33F317A96F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2D1EE31-2DF8-4932-AA50-D33F317A96F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{C8AEF60D-6D7B-44DB-8589-CCEA5555130F} = {767DB09B-90A0-456E-B623-5A7A91912F9C}
 		{A54AB57A-8F61-46C6-8ADC-86765F05975B} = {767DB09B-90A0-456E-B623-5A7A91912F9C}
 		{B8A89B50-2AEF-4E58-ACE2-942DB042B57F} = {767DB09B-90A0-456E-B623-5A7A91912F9C}
+		{D2D1EE31-2DF8-4932-AA50-D33F317A96F3} = {767DB09B-90A0-456E-B623-5A7A91912F9C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CE59AEDF-0630-4896-B230-69D503C2A101}

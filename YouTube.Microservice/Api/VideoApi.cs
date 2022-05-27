@@ -28,9 +28,9 @@ namespace YouTube.Microservice.Api
 
             List<string> videos = new List<string>();
 
-            foreach(var searchResult in searchLisResponse.Items)
+            foreach (var searchResult in searchLisResponse.Items)
             {
-                switch(searchResult.Id.Kind)
+                switch (searchResult.Id.Kind)
                 {
                     case "youtube#video":
                         videos.Add(String.Format("{0} ({1})", searchResult.Snippet.Title, searchResult.Id.VideoId));

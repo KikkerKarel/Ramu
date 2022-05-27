@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API.Microservice.Model
@@ -32,6 +31,6 @@ namespace API.Microservice.Model
         public int Duration { get; set; }
         public string? Image { get; set; }
     }
-    
+
 
 }

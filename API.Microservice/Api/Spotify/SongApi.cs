@@ -35,7 +35,7 @@ namespace API.Microservice.Api.Spotify
                 return null;
             }
 
-            foreach(var item in response.Tracks.Items)
+            foreach (var item in response.Tracks.Items)
             {
                 songs.Add(new Song()
                 {
@@ -49,7 +49,7 @@ namespace API.Microservice.Api.Spotify
                 });
             };
 
-            foreach(var song in songs)
+            foreach (var song in songs)
             {
                 if (db.Song.Any(s => s.Id == song.Id))
                 {

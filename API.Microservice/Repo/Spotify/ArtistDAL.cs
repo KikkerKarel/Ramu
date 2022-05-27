@@ -1,9 +1,4 @@
 ﻿using API.Microservice.Model;
-using API.Microservice.Repo.Spotify;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System.Net;
-using System.Net.Http.Headers;
 
 namespace API.Microservice.Repo.Spotify
 {
@@ -20,7 +15,7 @@ namespace API.Microservice.Repo.Spotify
             return db.Artist.Where(x => x.Name == name).FirstOrDefault();
         }
 
-        public List<Artist> getArtists() => db.Artist.ToList(); 
+        public List<Artist> getArtists() => db.Artist.ToList();
 
         public Artist GetArtistById(string id)
         {

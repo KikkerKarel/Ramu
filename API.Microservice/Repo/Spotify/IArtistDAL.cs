@@ -1,5 +1,4 @@
 ﻿using API.Microservice.Model;
-using Microsoft.AspNetCore.Http;
 
 namespace API.Microservice.Repo.Spotify
 {
