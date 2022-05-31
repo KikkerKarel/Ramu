@@ -116,4 +116,4 @@ app.MapGet("/api/scrape/get/about", ([FromServices] IArtistDAL api, string artis
 
 app.Run();
 
-public partial class Program { }
+public partial class ApiProgram { }

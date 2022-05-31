@@ -72,4 +72,4 @@ app.MapDelete("/list/delete/{id}", ([FromServices] IListDAL db, int id) =>
 
 app.Run();
 
-public partial class Program { }
+public partial class ListProgram { }
