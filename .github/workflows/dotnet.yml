@@ -24,6 +24,22 @@ jobs:
         uses: ./.github/actions/build
         with:
           PATH_TO_SLN_OR_CSPROJ: ${{matrix.PATH_TO_SLN_OR_CSPROJ}}
+  
+  test:
+    runs-on: windows-latest
+    strategy:
+      matrix: 
+        PATH_TO_TEST_CSPROJ:
+          - "./User.Microservice.Test/User.Microservice.Test.csproj"
+
+    steps:
+      - name: Clone repo to runner
+        uses: actions/checkout@v3
+
+      - name: test 
+        uses: ./.github/actions/back-end/test
+        with:
+          PATH_TO_TEST_CSPROJ: ${{matrix.PATH_TO_TEST_CSPROJ}}
 
   containerize:
     runs-on: windows-latest
