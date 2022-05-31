@@ -45,6 +45,7 @@ jobs:
     runs-on: windows-latest
     needs:
       - build
+      - test
     strategy:
       matrix: 
         array: [
