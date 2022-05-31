@@ -37,7 +37,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: test 
-        uses: ./.github/actions/back-end/test
+        uses: ./.github/actions/test
         with:
           PATH_TO_TEST_CSPROJ: ${{matrix.PATH_TO_TEST_CSPROJ}}
 
