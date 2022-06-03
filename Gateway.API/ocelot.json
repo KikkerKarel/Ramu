@@ -221,8 +221,21 @@
       "UpstreamHttpMethod": [ "GET" ],
       "SwaggerKey": "API.Microservice"
     },
+    //{
+    //  "DownstreamPathTemplate": "/api/scrape/get/about",
+    //  "DownstreamScheme": "https",
+    //  "DownstreamHostAndPorts": [
+    //    {
+    //      "Host": "localhost",
+    //      "Port": 44391
+    //    }
+    //  ],
+    //  "UpstreamPathTemplate": "/ramu/api/scrape/get/about",
+    //  "UpstreamHttpMethod": [ "GET" ],
+    //  "SwaggerKey": "API.Microservice"
+    //},
     {
-      "DownstreamPathTemplate": "/api/scrape/get/about",
+      "DownstreamPathTemplate": "/api/db/artist/add/about",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -230,8 +243,8 @@
           "Port": 44391
         }
       ],
-      "UpstreamPathTemplate": "/ramu/api/scrape/get/about",
-      "UpstreamHttpMethod": [ "GET" ],
+      "UpstreamPathTemplate": "/ramu/api/db/artist/add/about",
+      "UpstreamHttpMethod": [ "PUT" ],
       "SwaggerKey": "API.Microservice"
     },
     //API.Microservice Song calls

@@ -16,7 +16,6 @@ builder.Services.AddScoped<IArtistApi, ArtistApi>();
 builder.Services.AddScoped<IArtistDAL, ArtistDAL>();
 builder.Services.AddScoped<ISongApi, SongApi>();
 builder.Services.AddScoped<ISongDAL, SongDAL>();
-builder.Services.AddScoped<IWebScaper, Webscraper>();
 builder.Services.AddDbContext<ApiDbContext>(x => x.UseSqlServer(connectionString));
 
 builder.Services.AddAuthentication();
@@ -82,15 +81,15 @@ app.MapGet("/api/db/artist/get/all", ([FromServices] IArtistDAL db) =>
     return db.getArtists();
 });
 
+app.MapPut("/api/db/artist/add/about", ([FromServices] IArtistDAL db, string artistId, string about) =>
+{
+    return db.AddAbout(artistId, about);
+});
+
 //Song calls
 app.MapGet("/spotify/api/search/song", ([FromServices] ISongApi api, string artistName, string tokenHash) =>
 {
     return api.GetSongsByArtistFromApi(artistName, tokenHash);
-});
-
-app.MapGet("/test/scape", ([FromServices] IWebScaper webScraper) =>
-{
-    return webScraper.Scrape();
 });
 
 app.MapGet("/api/db/song/get/{name}", ([FromServices] ISongDAL db, string name) =>
@@ -109,10 +108,10 @@ app.MapGet("/api/db/song/get/id/{id}", ([FromServices] ISongDAL db, string id) =
 });
 
 //Webscraper calls
-app.MapGet("/api/scrape/get/about", ([FromServices] IArtistDAL api, string artistId) =>
-{
-    return api.GetAboutFromScraper(artistId);
-});
+//app.MapGet("/api/scrape/get/about", ([FromServices] IArtistDAL api, string artistId) =>
+//{
+//    return api.GetAboutFromScraper(artistId);
+//});
 
 app.Run();
 
