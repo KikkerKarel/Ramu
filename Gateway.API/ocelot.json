@@ -123,7 +123,7 @@
         }
       ],
       "UpstreamPathTemplate": "/ramu/list/delete/{id}",
-      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ],
+      "UpstreamHttpMethod": [ "DELETE" ],
       "SwaggerKey": "List.Microservice"
     },
     //Calculator.Microservice calls
