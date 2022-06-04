@@ -92,9 +92,14 @@ app.MapGet("/spotify/api/search/song", ([FromServices] ISongApi api, string arti
     return api.GetSongsByArtistFromApi(artistName, tokenHash);
 });
 
-app.MapGet("/api/db/song/get/{name}", ([FromServices] ISongDAL db, string name) =>
+//app.MapGet("/api/db/song/get/{name}", ([FromServices] ISongDAL db, string name) =>
+//{
+//    return db.getSongFromDb(name);
+//});
+
+app.MapGet("/api/db/song/get/artist/{artistId}", ([FromServices] ISongDAL db, string artistId) =>
 {
-    return db.getSongFromDb(name);
+    return db.getSongsByArtistId(artistId);
 });
 
 app.MapGet("/api/db/song/get/all", ([FromServices] ISongDAL db) =>

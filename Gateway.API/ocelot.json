@@ -261,8 +261,21 @@
       "UpstreamHttpMethod": [ "GET" ],
       "SwaggerKey": "API.Microservice"
     },
+    //{
+    //  "DownstreamPathTemplate": "/api/db/song/get/{name}",
+    //  "DownstreamScheme": "https",
+    //  "DownstreamHostAndPorts": [
+    //    {
+    //      "Host": "localhost",
+    //      "Port": 44391
+    //    }
+    //  ],
+    //  "UpstreamPathTemplate": "/ramu/api/song/get/{name}",
+    //  "UpstreamHttpMethod": [ "GET" ],
+    //  "SwaggerKey": "API.Microservice"
+    //},
     {
-      "DownstreamPathTemplate": "/api/db/song/get/{name}",
+      "DownstreamPathTemplate": "/api/db/song/get/artist/{artistId}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -270,7 +283,7 @@
           "Port": 44391
         }
       ],
-      "UpstreamPathTemplate": "/ramu/api/song/get/{name}",
+      "UpstreamPathTemplate": "/ramu/api/db/song/get/artist/{artistId}",
       "UpstreamHttpMethod": [ "GET" ],
       "SwaggerKey": "API.Microservice"
     },

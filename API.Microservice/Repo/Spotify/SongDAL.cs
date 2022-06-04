@@ -19,5 +19,9 @@ namespace API.Microservice.Repo.Spotify
         {
             return db.Song.Where(x => x.Id == id).FirstOrDefault();
         }
+        public List<Song> getSongsByArtistId(string artistId)
+        {
+            return db.Song.Where(x => x.ArtistId == artistId).ToList();
+        }
     }
 }
