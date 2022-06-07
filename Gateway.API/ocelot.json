@@ -325,6 +325,20 @@
       ],
       "UpstreamPathTemplate": "/ramu/webscraper/scrape/about",
       "UpstreamHttpMethod": [ "Post", "GET" ]
+    },
+    //YouTube Api Calls
+    {
+      "DownstreamPathTemplate": "/youtube/login",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 49155
+        }
+      ],
+      "UpstreamPathTemplate": "/ramu/youtube/login",
+      "UpstreamHttpMethod": [ "Post" ],
+      "SwaggerKey": "YouTube.Microservice"
     }
   ],
   "SwaggerEndPoints": [
@@ -365,6 +379,16 @@
           "Name": "Spotify&YouTube API",
           "Version": "v1",
           "Url": "https://localhost:44391/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "YouTube.Microservice",
+      "Config": [
+        {
+          "Name": "YouTube API",
+          "Version": "v1",
+          "Url": "https://localhost:49155/swagger/v1/swagger.json"
         }
       ]
     }
