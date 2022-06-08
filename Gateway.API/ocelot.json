@@ -333,7 +333,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 49155
+          "Port": 49153
         }
       ],
       "UpstreamPathTemplate": "/ramu/youtube/login",
@@ -388,7 +388,7 @@
         {
           "Name": "YouTube API",
           "Version": "v1",
-          "Url": "https://localhost:49155/swagger/v1/swagger.json"
+          "Url": "https://localhost:49153/swagger/v1/swagger.json"
         }
       ]
     }

@@ -12,7 +12,7 @@ namespace YouTube.Microservice.Api
         {
             this.db = db;
         }
-        public async Task Search()
+        public async Task<IResult> Search(string query)
         {
             var youtubeService = new YouTubeService(new BaseClientService.Initializer()
             {
@@ -21,7 +21,7 @@ namespace YouTube.Microservice.Api
             });
 
             var searchListRequest = youtubeService.Search.List("snippet");
-            searchListRequest.Q = "Google"; //replace with your search term.
+            searchListRequest.Q = query; //replace with your search term.
             searchListRequest.MaxResults = 50;
 
             var searchLisResponse = await searchListRequest.ExecuteAsync();
@@ -37,6 +37,8 @@ namespace YouTube.Microservice.Api
                         break;
                 }
             }
+
+            return Results.Ok(videos);
         }
     }
 }
